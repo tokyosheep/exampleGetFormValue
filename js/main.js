@@ -44,13 +44,13 @@ window.onload = () =>{
             console.log(checksObj);
             //use reduce method is more concisely */
 
-            /*get dataset value trough reduce method and object entries */
+            /*get dataset value through reduce method and object entries */
             const dataset = setData.reduce((acc,current,index)=>{
                 Object.entries(current.dataset).forEach(([key,value])=>{
                     acc[index][key] = value;
                 })
                 return acc;
-            },new Array(setData.length).fill({}));//set initial value Array in empty objects
+            },new Array(setData.length).fill({}));//set initial value empty objects in Array
             console.log(dataset);//get dataset as a object
         }
     }
