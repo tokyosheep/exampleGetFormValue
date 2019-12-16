@@ -46,11 +46,13 @@ window.onload = () =>{
 
             /*get dataset value through reduce method and object entries */
             const dataset = setData.reduce((acc,current,index)=>{
+                acc[index] = {};//push object in array
                 Object.entries(current.dataset).forEach(([key,value])=>{
                     acc[index][key] = value;
-                })
+                });
+                acc[index][current.id] = current.checked;
                 return acc;
-            },new Array(setData.length).fill({}));//set initial value empty objects in Array
+            },new Array(setData.length));//set initial value as an Array
             console.log(dataset);//get dataset as a object
         }
     }
